@@ -323,7 +323,8 @@ define('mobiledoc-markdown-renderer/renderer-factory', ['exports', 'mobiledoc-ma
           case undefined:
           case null:
             return new _mobiledocMarkdownRendererRenderers02['default'](mobiledoc, this.state).render();
-          case _mobiledocMarkdownRendererRenderers03.MOBILEDOC_VERSION:
+          case _mobiledocMarkdownRendererRenderers03.MOBILEDOC_VERSION_0_3:
+          case _mobiledocMarkdownRendererRenderers03.MOBILEDOC_VERSION_0_3_1:
             return new _mobiledocMarkdownRendererRenderers03['default'](mobiledoc, this.state).render();
           default:
             throw new Error('Unexpected Mobiledoc version "' + version + '"');
@@ -669,7 +670,11 @@ define('mobiledoc-markdown-renderer/renderers/0-3', ['exports', 'mobiledoc-markd
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-  var MOBILEDOC_VERSION = '0.3.0';
+  var MOBILEDOC_VERSION_0_3 = '0.3.0';
+  exports.MOBILEDOC_VERSION_0_3 = MOBILEDOC_VERSION_0_3;
+  var MOBILEDOC_VERSION_0_3_1 = '0.3.1';
+  exports.MOBILEDOC_VERSION_0_3_1 = MOBILEDOC_VERSION_0_3_1;
+  var MOBILEDOC_VERSION = MOBILEDOC_VERSION_0_3_1;
 
   exports.MOBILEDOC_VERSION = MOBILEDOC_VERSION;
   /**
@@ -700,7 +705,7 @@ define('mobiledoc-markdown-renderer/renderers/0-3', ['exports', 'mobiledoc-markd
   }
 
   function validateVersion(version) {
-    if (version !== MOBILEDOC_VERSION) {
+    if (version !== MOBILEDOC_VERSION_0_3 && version !== MOBILEDOC_VERSION_0_3_1) {
       throw new Error('Unexpected Mobiledoc version "' + version + '"');
     }
   }

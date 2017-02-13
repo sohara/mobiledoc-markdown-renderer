@@ -79,7 +79,8 @@ var RendererFactory = (function () {
         case undefined:
         case null:
           return new _renderers02['default'](mobiledoc, this.state).render();
-        case _renderers03.MOBILEDOC_VERSION:
+        case _renderers03.MOBILEDOC_VERSION_0_3:
+        case _renderers03.MOBILEDOC_VERSION_0_3_1:
           return new _renderers03['default'](mobiledoc, this.state).render();
         default:
           throw new Error('Unexpected Mobiledoc version "' + version + '"');

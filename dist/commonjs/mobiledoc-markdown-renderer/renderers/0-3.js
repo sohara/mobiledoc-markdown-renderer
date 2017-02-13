@@ -18,7 +18,11 @@ var _utilsTagNames = require('../utils/tag-names');
 
 var _utilsMarkerTypes = require('../utils/marker-types');
 
-var MOBILEDOC_VERSION = '0.3.0';
+var MOBILEDOC_VERSION_0_3 = '0.3.0';
+exports.MOBILEDOC_VERSION_0_3 = MOBILEDOC_VERSION_0_3;
+var MOBILEDOC_VERSION_0_3_1 = '0.3.1';
+exports.MOBILEDOC_VERSION_0_3_1 = MOBILEDOC_VERSION_0_3_1;
+var MOBILEDOC_VERSION = MOBILEDOC_VERSION_0_3_1;
 
 exports.MOBILEDOC_VERSION = MOBILEDOC_VERSION;
 /**
@@ -49,7 +53,7 @@ function createElementFromMarkerType() {
 }
 
 function validateVersion(version) {
-  if (version !== MOBILEDOC_VERSION) {
+  if (version !== MOBILEDOC_VERSION_0_3 && version !== MOBILEDOC_VERSION_0_3_1) {
     throw new Error('Unexpected Mobiledoc version "' + version + '"');
   }
 }
